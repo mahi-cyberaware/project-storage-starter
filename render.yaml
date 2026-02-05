@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: project-storage-starter
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: UPLOAD_DIR
+        value: /opt/render/project/src/uploads
+    disk:
+      name: uploads
+      mountPath: /opt/render/project/src/uploads
+      sizeGB: 1
