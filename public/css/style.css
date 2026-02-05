@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Upload Section */
+.upload-section {
+    padding: 40px;
+}
+
+.upload-area {
+    border: 3px dashed #667eea;
+    border-radius: 15px;
+    padding: 60px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #f8f9ff;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-area.dragover {
+    border-color: #764ba2;
+    background: #f0f2ff;
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    font-size: 60px;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.upload-area h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.upload-area p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+#fileInput {
+    display: none;
+}
+
+.upload-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.file-info {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.upload-progress {
+    width: 80%;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin: 20px auto;
+    display: none;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* File List Section */
+.file-section {
+    padding: 0 40px 40px;
+}
+
+.file-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box {
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #667eea;
+}
+
+.file-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.file-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    position: relative;
+}
+
+.file-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.file-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.file-icon {
+    font-size: 30px;
+    color: #667eea;
+}
+
+.file-info h4 {
+    color: #333;
+    margin-bottom: 5px;
+    word-break: break-all;
+}
+
+.file-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.file-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+    justify-content: center;
+}
+
+.download-btn {
+    background: #667eea;
+    color: white;
+}
+
+.download-btn:hover {
+    background: #5a6fd8;
+}
+
+.preview-btn {
+    background: #f0f2ff;
+    color: #667eea;
+    border: 1px solid #667eea;
+}
+
+.preview-btn:hover {
+    background: #e4e7ff;
+}
+
+.delete-btn {
+    background: #ff4757;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #ff3742;
+}
+
+.loading, .no-files {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    border-top: 1px solid #e0e0e0;
+    background: #f8f9ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        border-radius: 10px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .upload-section, .file-section {
+        padding: 20px;
+    }
+    
+    .file-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .upload-area {
+        padding: 40px 15px;
+    }
+    
+    .upload-icon {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .upload-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .file-actions {
+        flex-direction: column;
+    }
+}
