@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Project Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-cloud"></i>
+                <span>ProjectStorage</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="upload.html"><i class="fas fa-upload"></i> Upload</a></li>
+                <li><a href="files.html"><i class="fas fa-folder"></i> Files</a></li>
+                <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="about-container">
+        <h1>About Project Storage</h1>
+        <p>Welcome to Project Storage, your reliable solution for storing and managing project files securely in the cloud.</p>
+        
+        <h2>Our Mission</h2>
+        <p>To provide developers, students, and professionals with a simple yet powerful platform to store, organize, and share their project files from anywhere.</p>
+        
+        <h2>Features</h2>
+        <ul>
+            <li>Secure file storage with encryption</li>
+            <li>Easy file upload and organization</li>
+            <li>Cross-platform access (desktop & mobile)</li>
+            <li>Fast file downloads</li>
+            <li>File preview capability</li>
+            <li>Responsive design for all devices</li>
+        </ul>
+        
+        <h2>Technology Stack</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">Express</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">HTML5</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">Render</span>
+        </div>
+        
+        <h2>Open Source</h2>
+        <p>This project is open source and available on GitHub. Feel free to contribute or customize it for your needs.</p>
+        
+        <a href="https://github.com/mahi-cyberaware/project-storage-starter" class="btn-primary">
+            <i class="fab fa-github"></i> View on GitHub
+        </a>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Project Storage</h3>
+                <p>Your reliable file storage solution</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="upload.html"><i class="fas fa-upload"></i> Upload Files</a>
+                <a href="files.html"><i class="fas fa-folder"></i> Browse Files</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2024 Project Storage. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
