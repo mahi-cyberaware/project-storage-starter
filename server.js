@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Create uploads directory if not exists
-const uploadDir = path.join(__dirname, 'uploads');
+const uploadDir = process.env.UPLOAD_DIR || path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true });
 }
@@ -28,7 +28,6 @@ const upload = multer({
     storage: storage,
     limits: { fileSize: 100 * 1024 * 1024 }, // 100MB limit
     fileFilter: (req, file, cb) => {
-        // Accept all file types
         cb(null, true);
     }
 });
@@ -37,11 +36,31 @@ const upload = multer({
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static(uploadDir));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Serve HTML pages
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.get('/upload', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'upload.html'));
+});
+
+app.get('/files', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'files.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+});
+
 // API Routes
-// Get all files
 app.get('/api/files', (req, res) => {
     fs.readdir(uploadDir, (err, files) => {
         if (err) {
@@ -56,7 +75,8 @@ app.get('/api/files', (req, res) => {
                 originalName: file.split('-').slice(1).join('-'),
                 size: formatFileSize(stats.size),
                 uploadDate: stats.birthtime,
-                path: `/uploads/${file}`
+                path: `/uploads/${file}`,
+                type: getFileType(file)
             };
         });
         
@@ -64,7 +84,6 @@ app.get('/api/files', (req, res) => {
     });
 });
 
-// Upload file
 app.post('/api/upload', upload.array('files', 10), (req, res) => {
     if (!req.files || req.files.length === 0) {
         return res.status(400).json({ error: 'No files uploaded' });
@@ -74,7 +93,8 @@ app.post('/api/upload', upload.array('files', 10), (req, res) => {
         name: file.filename,
         originalName: file.originalname,
         size: formatFileSize(file.size),
-        path: `/uploads/${file.filename}`
+        path: `/uploads/${file.filename}`,
+        type: getFileType(file.filename)
     }));
     
     res.json({ 
@@ -83,7 +103,6 @@ app.post('/api/upload', upload.array('files', 10), (req, res) => {
     });
 });
 
-// Delete file
 app.delete('/api/files/:filename', (req, res) => {
     const filename = req.params.filename;
     const filePath = path.join(uploadDir, filename);
@@ -100,7 +119,6 @@ app.delete('/api/files/:filename', (req, res) => {
     }
 });
 
-// Download file
 app.get('/api/download/:filename', (req, res) => {
     const filename = req.params.filename;
     const filePath = path.join(uploadDir, filename);
@@ -112,7 +130,7 @@ app.get('/api/download/:filename', (req, res) => {
     }
 });
 
-// Helper function to format file size
+// Helper functions
 function formatFileSize(bytes) {
     if (bytes === 0) return '0 Bytes';
     const k = 1024;
@@ -121,8 +139,28 @@ function formatFileSize(bytes) {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
 }
 
-// Start server
+function getFileType(filename) {
+    const ext = filename.split('.').pop().toLowerCase();
+    const imageTypes = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+    const videoTypes = ['mp4', 'avi', 'mov', 'mkv', 'webm'];
+    const audioTypes = ['mp3', 'wav', 'ogg'];
+    const docTypes = ['pdf', 'doc', 'docx', 'txt', 'rtf'];
+    const codeTypes = ['js', 'html', 'css', 'py', 'java', 'cpp', 'json'];
+    const archiveTypes = ['zip', 'rar', '7z', 'tar', 'gz'];
+    
+    if (imageTypes.includes(ext)) return 'image';
+    if (videoTypes.includes(ext)) return 'video';
+    if (audioTypes.includes(ext)) return 'audio';
+    if (docTypes.includes(ext)) return 'document';
+    if (codeTypes.includes(ext)) return 'code';
+    if (archiveTypes.includes(ext)) return 'archive';
+    return 'other';
+}
+
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-    console.log(`For Termux, also accessible at: http://192.168.x.x:${PORT} (your local IP)`);
+    console.log(`✅ Server running on port ${PORT}`);
+    console.log(`📁 Upload directory: ${uploadDir}`);
+    console.log(`🌐 Home: http://localhost:${PORT}`);
+    console.log(`📤 Upload: http://localhost:${PORT}/upload`);
+    console.log(`📂 Files: http://localhost:${PORT}/files`);
 });

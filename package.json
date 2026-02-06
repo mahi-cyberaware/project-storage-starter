@@ -1,7 +1,7 @@
 {
   "name": "project-storage-starter",
   "version": "1.0.0",
-  "description": "File storage system for project files",
+  "description": "Complete file storage system with multi-page website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -15,7 +15,10 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "keywords": ["file-storage", "upload", "project-files"],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "keywords": ["file-storage", "upload", "project-files", "nodejs"],
   "author": "Your Name",
   "license": "MIT"
 }
