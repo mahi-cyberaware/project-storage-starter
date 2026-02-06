@@ -1,1 +1,235 @@
-[PASTE THE CONTACT HTML CODE ABOVE HERE]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Project Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/about-contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/folder-invoices.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-cloud"></i>
+                <span>ProjectStorage</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/upload"><i class="fas fa-upload"></i> Upload</a></li>
+                <li><a href="/files"><i class="fas fa-folder"></i> Files</a></li>
+                <li><a href="/about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="/contact" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <div class="page-header">
+            <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+            <p>Get in touch with us for support, feedback, or collaboration</p>
+        </div>
+
+        <div class="contact-content">
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2><i class="fas fa-paper-plane"></i> Send Message</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject"><i class="fas fa-tag"></i> Subject</label>
+                        <select id="subject" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="support">Technical Support</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="bug">Bug Report</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message"><i class="fas fa-comment"></i> Message</label>
+                        <textarea id="message" rows="6" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" checked>
+                            <label for="newsletter">Subscribe to updates about new features</label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-section">
+                <h2><i class="fas fa-info-circle"></i> Contact Information</h2>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>support@projectstorage.com</p>
+                            <small>Typically responds within 24 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Website</h3>
+                            <p>https://project-storage-starter.onrender.com</p>
+                            <small>Live demo and documentation</small>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>GitHub</h3>
+                            <p>github.com/mahi-cyberaware/project-storage-starter</p>
+                            <small>Source code and issues</small>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Repository</h3>
+                            <p>Open source on GitHub</p>
+                            <small>Contributions welcome</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is Project Storage free to use?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! Project Storage is completely free with 1GB of storage. We offer this as a service to the developer community.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>What is the maximum file size?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can upload files up to 100MB each, with a maximum of 10 files at once.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How long are files stored?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Files are stored indefinitely. However, you can delete them anytime from the Files page.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I contribute to the project?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! The project is open source on GitHub. Feel free to fork, submit issues, or create pull requests.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-section">
+                    <h2><i class="fas fa-share-alt"></i> Connect With Us</h2>
+                    <div class="social-links">
+                        <a href="https://github.com/mahi-cyberaware/project-storage-starter" class="social-link github" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="social-link twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="#" class="social-link discord">
+                            <i class="fab fa-discord"></i> Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-cloud"></i> ProjectStorage</h3>
+                <p>Your files, anywhere, anytime</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="/upload"><i class="fas fa-upload"></i> Upload Files</a>
+                <a href="/files"><i class="fas fa-folder"></i> Browse Files</a>
+                <a href="/about"><i class="fas fa-info-circle"></i> About Project</a>
+            </div>
+            <div class="footer-section">
+                <h4>Help</h4>
+                <a href="#"><i class="fas fa-question-circle"></i> Help Center</a>
+                <a href="#"><i class="fas fa-book"></i> Documentation</a>
+                <a href="#"><i class="fas fa-bug"></i> Report Bug</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Project Storage | Contact: support@projectstorage.com</p>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/about-contact.js"></script>
+</body>
+</html>

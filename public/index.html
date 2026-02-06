@@ -8,23 +8,41 @@
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/folder-invoices.png">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <!-- Add nav code from above -->
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-cloud"></i>
+                <span>ProjectStorage</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="/" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/upload"><i class="fas fa-upload"></i> Upload</a></li>
+                <li><a href="/files"><i class="fas fa-folder"></i> Files</a></li>
+                <li><a href="/about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Store & Share Your Project Files</h1>
-            <p>Upload, organize, and access your project files from anywhere</p>
+            <p>Upload, organize, and access your project files from anywhere. Secure, fast, and free.</p>
             <div class="hero-buttons">
-                <a href="upload.html" class="btn-primary">
+                <a href="/upload" class="btn-primary">
                     <i class="fas fa-cloud-upload-alt"></i> Start Uploading
                 </a>
-                <a href="files.html" class="btn-secondary">
+                <a href="/files" class="btn-secondary">
                     <i class="fas fa-eye"></i> Browse Files
                 </a>
             </div>
@@ -41,7 +59,7 @@
             <div class="feature-card">
                 <i class="fas fa-shield-alt"></i>
                 <h3>Secure Storage</h3>
-                <p>Your files are encrypted and securely stored with 99.9% uptime.</p>
+                <p>Your files are encrypted and securely stored with 99.9% uptime guarantee.</p>
             </div>
             <div class="feature-card">
                 <i class="fas fa-mobile-alt"></i>
@@ -56,24 +74,62 @@
             <div class="feature-card">
                 <i class="fas fa-users"></i>
                 <h3>Easy Sharing</h3>
-                <p>Share files with team members via direct links.</p>
+                <p>Share files with team members via direct download links.</p>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
     <section class="stats">
-        <div class="stat-item">
-            <h3 id="totalFiles">0</h3>
-            <p>Files Uploaded</p>
+        <h2>Platform Statistics</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fas fa-file-upload"></i>
+                <h3 id="totalFiles">0</h3>
+                <p>Files Uploaded</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-database"></i>
+                <h3 id="totalSize">0 GB</h3>
+                <p>Storage Used</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <h3 id="activeUsers">1</h3>
+                <p>Active Users</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <h3>24/7</h3>
+                <p>Uptime</p>
+            </div>
         </div>
-        <div class="stat-item">
-            <h3 id="totalSize">0 GB</h3>
-            <p>Storage Used</p>
-        </div>
-        <div class="stat-item">
-            <h3 id="totalUsers">1</h3>
-            <p>Active Users</p>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <h2>Quick Actions</h2>
+        <div class="actions-grid">
+            <a href="/upload" class="action-card">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Upload Files</h3>
+                <p>Upload new project files</p>
+            </a>
+            <a href="/files" class="action-card">
+                <i class="fas fa-search"></i>
+                <h3>Browse Files</h3>
+                <p>Search and manage files</p>
+            </a>
+            <a href="/files" class="action-card">
+                <i class="fas fa-download"></i>
+                <h3>Download</h3>
+                <p>Get your files anytime</p>
+            </a>
+            <a href="/about" class="action-card">
+                <i class="fas fa-info-circle"></i>
+                <h3>Learn More</h3>
+                <p>About the project</p>
+            </a>
         </div>
     </section>
 
@@ -81,26 +137,41 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Project Storage</h3>
-                <p>Your reliable file storage solution</p>
+                <h3><i class="fas fa-cloud"></i> ProjectStorage</h3>
+                <p>Your reliable file storage solution for all projects.</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="upload.html">Upload Files</a>
-                <a href="files.html">Browse Files</a>
-                <a href="about.html">About Us</a>
+                <a href="/upload"><i class="fas fa-upload"></i> Upload Files</a>
+                <a href="/files"><i class="fas fa-folder"></i> Browse Files</a>
+                <a href="/about"><i class="fas fa-info-circle"></i> About Us</a>
+                <a href="/contact"><i class="fas fa-envelope"></i> Contact</a>
             </div>
             <div class="footer-section">
                 <h4>Connect</h4>
-                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://github.com/mahi-cyberaware/project-storage-starter" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
                 <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
                 <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
             </div>
+            <div class="footer-section">
+                <h4>Technology</h4>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>JavaScript</span>
+                <span>Render</span>
+            </div>
         </div>
-        <p class="copyright">&copy; 2024 Project Storage. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Project Storage. All rights reserved. | Built with ❤️ on Termux</p>
+            <p>Live at: <a href="https://project-storage-starter.onrender.com" target="_blank">project-storage-starter.onrender.com</a></p>
+        </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="js/nav.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/api.js"></script>
 </body>
 </html>

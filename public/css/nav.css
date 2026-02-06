@@ -1,0 +1,125 @@
+/* Navigation */
+.navbar {
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo i {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 4px;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.nav-menu a.active {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 10px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        padding: 20px 0;
+        gap: 10px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu a {
+        padding: 16px;
+        justify-content: center;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+    
+    .nav-menu a.active::after {
+        display: none;
+    }
+}

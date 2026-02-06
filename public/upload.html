@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files - Project Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/folder-invoices.png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-cloud"></i>
+                <span>ProjectStorage</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/upload" class="active"><i class="fas fa-upload"></i> Upload</a></li>
+                <li><a href="/files"><i class="fas fa-folder"></i> Files</a></li>
+                <li><a href="/about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="upload-container">
+        <div class="page-header">
+            <h1><i class="fas fa-cloud-upload-alt"></i> Upload Files</h1>
+            <p>Upload your project files (Maximum 100MB per file, 10 files at once)</p>
+        </div>
+
+        <div class="upload-area" id="dropArea">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <h3>Drag & Drop Files Here</h3>
+            <p>or click to browse from your device</p>
+            <input type="file" id="fileInput" multiple>
+            
+            <div class="file-types-info">
+                <p>Supported file types:</p>
+                <div class="file-types">
+                    <span class="file-type-badge"><i class="fas fa-file-image"></i> Images (JPG, PNG, GIF)</span>
+                    <span class="file-type-badge"><i class="fas fa-file-pdf"></i> PDF Documents</span>
+                    <span class="file-type-badge"><i class="fas fa-file-code"></i> Code Files</span>
+                    <span class="file-type-badge"><i class="fas fa-file-archive"></i> Archives (ZIP, RAR)</span>
+                    <span class="file-type-badge"><i class="fas fa-file-video"></i> Videos (MP4, AVI)</span>
+                    <span class="file-type-badge"><i class="fas fa-file-audio"></i> Audio (MP3, WAV)</span>
+                    <span class="file-type-badge"><i class="fas fa-file"></i> All Other Files</span>
+                </div>
+            </div>
+
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                <i class="fas fa-folder-open"></i> Select Files
+            </button>
+            
+            <div class="selected-files" id="selectedFiles">
+                <!-- Selected files will appear here -->
+            </div>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="upload-progress" id="uploadProgress">
+            <div class="progress-header">
+                <h4><i class="fas fa-sync-alt"></i> Upload Progress</h4>
+                <button class="cancel-btn" id="cancelBtn" onclick="cancelUpload()">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+            </div>
+            <div class="progress-info">
+                <span id="progressText">Ready to upload</span>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-details" id="progressDetails">
+                <!-- Upload details will appear here -->
+            </div>
+        </div>
+
+        <!-- Recent Uploads -->
+        <div class="recent-uploads">
+            <h3><i class="fas fa-history"></i> Recent Uploads</h3>
+            <div class="uploads-list" id="uploadsList">
+                <div class="loading-uploads">
+                    <i class="fas fa-spinner fa-spin"></i> Loading recent uploads...
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="upload-tips">
+            <h3><i class="fas fa-lightbulb"></i> Upload Tips</h3>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> You can upload up to 10 files at once</li>
+                <li><i class="fas fa-check-circle"></i> Maximum file size is 100MB per file</li>
+                <li><i class="fas fa-check-circle"></i> All file types are supported</li>
+                <li><i class="fas fa-check-circle"></i> Files are encrypted and securely stored</li>
+                <li><i class="fas fa-check-circle"></i> You can download files anytime from Files page</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/nav.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>

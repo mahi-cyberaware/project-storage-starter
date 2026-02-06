@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Project Storage</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/about-contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/folder-invoices.png">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <div class="logo">
                 <i class="fas fa-cloud"></i>
                 <span>ProjectStorage</span>
-            </a>
+            </div>
             
             <ul class="nav-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="upload.html"><i class="fas fa-upload"></i> Upload</a></li>
-                <li><a href="files.html"><i class="fas fa-folder"></i> Files</a></li>
-                <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> About</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/upload"><i class="fas fa-upload"></i> Upload</a></li>
+                <li><a href="/files"><i class="fas fa-folder"></i> Files</a></li>
+                <li><a href="/about" class="active"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="/contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
             
             <div class="mobile-menu">
@@ -28,76 +31,197 @@
             </div>
         </div>
     </nav>
-    
+
     <div class="about-container">
-        <h1>About Project Storage</h1>
-        <p>Welcome to Project Storage, your reliable solution for storing and managing project files securely in the cloud.</p>
-        
-        <h2>Our Mission</h2>
-        <p>To provide developers, students, and professionals with a simple yet powerful platform to store, organize, and share their project files from anywhere.</p>
-        
-        <h2>Features</h2>
-        <ul>
-            <li>Secure file storage with encryption</li>
-            <li>Easy file upload and organization</li>
-            <li>Cross-platform access (desktop & mobile)</li>
-            <li>Fast file downloads</li>
-            <li>File preview capability</li>
-            <li>Responsive design for all devices</li>
-        </ul>
-        
-        <h2>Technology Stack</h2>
-        <div class="tech-stack">
-            <span class="tech-badge">Node.js</span>
-            <span class="tech-badge">Express</span>
-            <span class="tech-badge">JavaScript</span>
-            <span class="tech-badge">HTML5</span>
-            <span class="tech-badge">CSS3</span>
-            <span class="tech-badge">Render</span>
+        <div class="page-header">
+            <h1><i class="fas fa-info-circle"></i> About Project Storage</h1>
+            <p>Learn about our mission, features, and technology stack</p>
         </div>
-        
-        <h2>Open Source</h2>
-        <p>This project is open source and available on GitHub. Feel free to contribute or customize it for your needs.</p>
-        
-        <a href="https://github.com/mahi-cyberaware/project-storage-starter" class="btn-primary">
-            <i class="fab fa-github"></i> View on GitHub
-        </a>
+
+        <div class="about-content">
+            <!-- Mission Section -->
+            <section class="about-section">
+                <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                <p>To provide a simple, secure, and accessible file storage solution for developers, students, and professionals. We believe everyone should have access to reliable file storage without complexity.</p>
+            </section>
+
+            <!-- Features Section -->
+            <section class="about-section">
+                <h2><i class="fas fa-star"></i> Key Features</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Secure Storage</h3>
+                        <p>Files are encrypted and stored securely with automatic backups.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Cross-Platform</h3>
+                        <p>Access your files from any device - desktop, tablet, or mobile.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Fast Uploads</h3>
+                        <p>Optimized upload system supporting large files up to 100MB.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-search"></i>
+                        <h3>Smart Search</h3>
+                        <p>Find files quickly with our advanced search and filtering.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-download"></i>
+                        <h3>Easy Download</h3>
+                        <p>Download files with one click on any device.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Auto-Sync</h3>
+                        <p>Files are automatically synchronized across all your devices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technology Stack -->
+            <section class="about-section">
+                <h2><i class="fas fa-code"></i> Technology Stack</h2>
+                <p>Built with modern technologies for reliability and performance:</p>
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <i class="fab fa-node-js"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-server"></i>
+                        <span>Express.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-cloud"></i>
+                        <span>Render.com</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-terminal"></i>
+                        <span>Termux</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Journey -->
+            <section class="about-section">
+                <h2><i class="fas fa-road"></i> Project Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Feb 2024</div>
+                        <div class="timeline-content">
+                            <h3>Project Start</h3>
+                            <p>Initial concept and planning. Built on Termux mobile platform.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Mar 2024</div>
+                        <div class="timeline-content">
+                            <h3>Development</h3>
+                            <p>Complete backend API with file upload/download functionality.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Apr 2024</div>
+                        <div class="timeline-content">
+                            <h3>Frontend Design</h3>
+                            <p>Responsive multi-page website with modern UI/UX.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Present</div>
+                        <div class="timeline-content">
+                            <h3>Live Deployment</h3>
+                            <p>Deployed on Render.com with persistent storage and auto-deploy.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="about-section">
+                <h2><i class="fas fa-users"></i> Behind the Project</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <i class="fas fa-user-coder"></i>
+                        </div>
+                        <h3>Developer</h3>
+                        <p>Full-stack development</p>
+                        <p class="member-bio">Built the entire project on Termux, focusing on mobile-first development and cross-platform compatibility.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Infrastructure</h3>
+                        <p>Deployment & Hosting</p>
+                        <p class="member-bio">Configured Render.com deployment with persistent storage and auto-deploy from GitHub.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h2>Ready to store your files?</h2>
+            <p>Join thousands of users who trust Project Storage for their file management needs.</p>
+            <div class="cta-buttons">
+                <a href="/upload" class="btn-primary">
+                    <i class="fas fa-cloud-upload-alt"></i> Start Uploading
+                </a>
+                <a href="/contact" class="btn-secondary">
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+            </div>
+        </div>
     </div>
-    
+
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Project Storage</h3>
-                <p>Your reliable file storage solution</p>
+                <h3><i class="fas fa-cloud"></i> ProjectStorage</h3>
+                <p>Secure file storage for everyone</p>
             </div>
             <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="upload.html"><i class="fas fa-upload"></i> Upload Files</a>
-                <a href="files.html"><i class="fas fa-folder"></i> Browse Files</a>
-                <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+                <h4>Links</h4>
+                <a href="/"><i class="fas fa-home"></i> Home</a>
+                <a href="/upload"><i class="fas fa-upload"></i> Upload</a>
+                <a href="/files"><i class="fas fa-folder"></i> Files</a>
             </div>
             <div class="footer-section">
-                <h4>Connect</h4>
-                <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <h4>Technology</h4>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>Render</span>
             </div>
         </div>
-        <p class="copyright">&copy; 2024 Project Storage. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Project Storage | Built with ❤️ on Termux</p>
+        </div>
     </footer>
-    
-    <script>
-        // Navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.querySelector('.mobile-menu');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                });
-            }
-        });
-    </script>
+
+    <script src="js/nav.js"></script>
+    <script src="js/about-contact.js"></script>
 </body>
 </html>

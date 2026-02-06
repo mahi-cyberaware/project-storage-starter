@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Files - Project Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/files.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Same navigation -->
+    </nav>
+
+    <div class="files-container">
+        <div class="page-header">
+            <h1><i class="fas fa-folder-open"></i> All Files</h1>
+            <div class="header-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search files...">
+                </div>
+                <div class="filter-dropdown">
+                    <select id="filterType">
+                        <option value="all">All Files</option>
+                        <option value="image">Images</option>
+                        <option value="pdf">PDF</option>
+                        <option value="video">Videos</option>
+                        <option value="code">Code</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="files-grid" id="filesGrid">
+            <!-- Files will load here -->
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <i class="fas fa-folder-open"></i>
+            <h3>No files yet</h3>
+            <p>Upload your first file to get started</p>
+            <a href="upload.html" class="btn-primary">Upload Files</a>
+        </div>
+    </div>
+
+    <!-- File Preview Modal -->
+    <div class="modal" id="previewModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePreview()">&times;</span>
+            <div class="modal-body" id="previewBody">
+                <!-- Preview content -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/files.js"></script>
+</body>
+</html>

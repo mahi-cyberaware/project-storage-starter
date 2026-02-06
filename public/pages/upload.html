@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Files - Project Storage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/upload.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Same navigation -->
+    </nav>
+
+    <div class="upload-container">
+        <div class="page-header">
+            <h1><i class="fas fa-cloud-upload-alt"></i> Upload Files</h1>
+            <p>Upload your project files (Max 100MB per file)</p>
+        </div>
+
+        <div class="upload-area" id="dropArea">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <h3>Drag & Drop Files Here</h3>
+            <p>or click to browse from your device</p>
+            <input type="file" id="fileInput" multiple>
+            
+            <div class="file-types">
+                <span class="file-type-badge"><i class="fas fa-file-image"></i> Images</span>
+                <span class="file-type-badge"><i class="fas fa-file-pdf"></i> PDF</span>
+                <span class="file-type-badge"><i class="fas fa-file-code"></i> Code</span>
+                <span class="file-type-badge"><i class="fas fa-file-archive"></i> Zip</span>
+                <span class="file-type-badge"><i class="fas fa-file-video"></i> Video</span>
+            </div>
+
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                <i class="fas fa-folder-open"></i> Select Files
+            </button>
+        </div>
+
+        <div class="upload-progress" id="uploadProgress">
+            <div class="progress-info">
+                <span id="progressText">Uploading...</span>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="recent-uploads">
+            <h3><i class="fas fa-history"></i> Recent Uploads</h3>
+            <div class="uploads-list" id="uploadsList">
+                <!-- Recent files will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/nav.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>
